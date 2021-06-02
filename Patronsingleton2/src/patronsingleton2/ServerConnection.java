@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ServerConnection {
     
       static int contador = 2;
-      static ServerConnection instance;
+      //static ServerConnection instance;
       static ArrayList<ServerConnection> arrayConexiones = new ArrayList<ServerConnection>();
       private ServerConnection(){
          
@@ -23,8 +23,9 @@ public class ServerConnection {
       public static ArrayList createInstance(){
           if(arrayConexiones.size()==0){
                for(int i=0; i<contador;i++){
-                   instance = new ServerConnection();
-                   arrayConexiones.add(instance);
+                   
+                   ServerConnection conexion = new ServerConnection();
+                   arrayConexiones.add(conexion);
                    System.out.println("se creo la conexion "+(i+1));
           }
           }
